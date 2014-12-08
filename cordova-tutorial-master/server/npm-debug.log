@@ -1,0 +1,177 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 warn package.json @ No description
+5 warn package.json @ No repository field.
+6 warn package.json @ No README data
+7 verbose readDependencies using package.json deps
+8 verbose install where, deps [ '/Users/timotheemevel/Development/workshop/cordova-tutorial-master/server',
+8 verbose install   [ 'express', 'body-parser', 'method-override' ] ]
+9 info preinstall @
+10 verbose readDependencies using package.json deps
+11 verbose cache add [ 'express@~4.4.1', null ]
+12 verbose cache add name=undefined spec="express@~4.4.1" args=["express@~4.4.1",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'express@~4.4.1',
+13 verbose parsed url   path: 'express@~4.4.1',
+13 verbose parsed url   href: 'express@~4.4.1' }
+14 verbose cache add [ 'body-parser@~1.3.0', null ]
+15 verbose cache add name=undefined spec="body-parser@~1.3.0" args=["body-parser@~1.3.0",null]
+16 verbose parsed url { protocol: null,
+16 verbose parsed url   slashes: null,
+16 verbose parsed url   auth: null,
+16 verbose parsed url   host: null,
+16 verbose parsed url   port: null,
+16 verbose parsed url   hostname: null,
+16 verbose parsed url   hash: null,
+16 verbose parsed url   search: null,
+16 verbose parsed url   query: null,
+16 verbose parsed url   pathname: 'body-parser@~1.3.0',
+16 verbose parsed url   path: 'body-parser@~1.3.0',
+16 verbose parsed url   href: 'body-parser@~1.3.0' }
+17 verbose cache add name="express" spec="~4.4.1" args=["express","~4.4.1"]
+18 verbose parsed url { protocol: null,
+18 verbose parsed url   slashes: null,
+18 verbose parsed url   auth: null,
+18 verbose parsed url   host: null,
+18 verbose parsed url   port: null,
+18 verbose parsed url   hostname: null,
+18 verbose parsed url   hash: null,
+18 verbose parsed url   search: null,
+18 verbose parsed url   query: null,
+18 verbose parsed url   pathname: '~4.4.1',
+18 verbose parsed url   path: '~4.4.1',
+18 verbose parsed url   href: '~4.4.1' }
+19 verbose addNamed [ 'express', '~4.4.1' ]
+20 verbose addNamed [ null, '>=4.4.1-0 <4.5.0-0' ]
+21 verbose cache add [ 'method-override@~2.0.1', null ]
+22 verbose cache add name=undefined spec="method-override@~2.0.1" args=["method-override@~2.0.1",null]
+23 verbose parsed url { protocol: null,
+23 verbose parsed url   slashes: null,
+23 verbose parsed url   auth: null,
+23 verbose parsed url   host: null,
+23 verbose parsed url   port: null,
+23 verbose parsed url   hostname: null,
+23 verbose parsed url   hash: null,
+23 verbose parsed url   search: null,
+23 verbose parsed url   query: null,
+23 verbose parsed url   pathname: 'method-override@~2.0.1',
+23 verbose parsed url   path: 'method-override@~2.0.1',
+23 verbose parsed url   href: 'method-override@~2.0.1' }
+24 verbose cache add name="body-parser" spec="~1.3.0" args=["body-parser","~1.3.0"]
+25 verbose parsed url { protocol: null,
+25 verbose parsed url   slashes: null,
+25 verbose parsed url   auth: null,
+25 verbose parsed url   host: null,
+25 verbose parsed url   port: null,
+25 verbose parsed url   hostname: null,
+25 verbose parsed url   hash: null,
+25 verbose parsed url   search: null,
+25 verbose parsed url   query: null,
+25 verbose parsed url   pathname: '~1.3.0',
+25 verbose parsed url   path: '~1.3.0',
+25 verbose parsed url   href: '~1.3.0' }
+26 verbose addNamed [ 'body-parser', '~1.3.0' ]
+27 verbose addNamed [ null, '>=1.3.0-0 <1.4.0-0' ]
+28 silly lockFile 022ff684-express-4-4-1 express@~4.4.1
+29 verbose lock express@~4.4.1 /Users/timotheemevel/.npm/022ff684-express-4-4-1.lock
+30 silly lockFile fc85f3e9-body-parser-1-3-0 body-parser@~1.3.0
+31 verbose lock body-parser@~1.3.0 /Users/timotheemevel/.npm/fc85f3e9-body-parser-1-3-0.lock
+32 verbose cache add name="method-override" spec="~2.0.1" args=["method-override","~2.0.1"]
+33 verbose parsed url { protocol: null,
+33 verbose parsed url   slashes: null,
+33 verbose parsed url   auth: null,
+33 verbose parsed url   host: null,
+33 verbose parsed url   port: null,
+33 verbose parsed url   hostname: null,
+33 verbose parsed url   hash: null,
+33 verbose parsed url   search: null,
+33 verbose parsed url   query: null,
+33 verbose parsed url   pathname: '~2.0.1',
+33 verbose parsed url   path: '~2.0.1',
+33 verbose parsed url   href: '~2.0.1' }
+34 verbose addNamed [ 'method-override', '~2.0.1' ]
+35 verbose addNamed [ null, '>=2.0.1-0 <2.1.0-0' ]
+36 silly lockFile fdd92f84-method-override-2-0-1 method-override@~2.0.1
+37 verbose lock method-override@~2.0.1 /Users/timotheemevel/.npm/fdd92f84-method-override-2-0-1.lock
+38 silly addNameRange { name: 'express', range: '>=4.4.1-0 <4.5.0-0', hasData: false }
+39 silly addNameRange { name: 'body-parser',
+39 silly addNameRange   range: '>=1.3.0-0 <1.4.0-0',
+39 silly addNameRange   hasData: false }
+40 silly addNameRange { name: 'method-override',
+40 silly addNameRange   range: '>=2.0.1-0 <2.1.0-0',
+40 silly addNameRange   hasData: false }
+41 verbose request where is /express
+42 verbose request registry https://registry.npmjs.org/
+43 verbose request id 12df7b7ced03f3e8
+44 verbose url raw /express
+45 verbose url resolving [ 'https://registry.npmjs.org/', './express' ]
+46 verbose url resolved https://registry.npmjs.org/express
+47 verbose request where is https://registry.npmjs.org/express
+48 info trying registry request attempt 1 at 23:43:24
+49 http GET https://registry.npmjs.org/express
+50 verbose request where is /body-parser
+51 verbose request registry https://registry.npmjs.org/
+52 verbose url raw /body-parser
+53 verbose url resolving [ 'https://registry.npmjs.org/', './body-parser' ]
+54 verbose url resolved https://registry.npmjs.org/body-parser
+55 verbose request where is https://registry.npmjs.org/body-parser
+56 info trying registry request attempt 1 at 23:43:24
+57 http GET https://registry.npmjs.org/body-parser
+58 verbose request where is /method-override
+59 verbose request registry https://registry.npmjs.org/
+60 verbose url raw /method-override
+61 verbose url resolving [ 'https://registry.npmjs.org/', './method-override' ]
+62 verbose url resolved https://registry.npmjs.org/method-override
+63 verbose request where is https://registry.npmjs.org/method-override
+64 info trying registry request attempt 1 at 23:43:24
+65 http GET https://registry.npmjs.org/method-override
+66 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+67 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+68 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+69 info trying registry request attempt 2 at 23:44:50
+70 http GET https://registry.npmjs.org/body-parser
+71 info trying registry request attempt 2 at 23:44:50
+72 http GET https://registry.npmjs.org/express
+73 info trying registry request attempt 2 at 23:44:50
+74 http GET https://registry.npmjs.org/method-override
+75 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+76 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+77 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+78 info trying registry request attempt 3 at 23:47:05
+79 http GET https://registry.npmjs.org/body-parser
+80 info trying registry request attempt 3 at 23:47:05
+81 http GET https://registry.npmjs.org/express
+82 info trying registry request attempt 3 at 23:47:05
+83 http GET https://registry.npmjs.org/method-override
+84 silly lockFile fc85f3e9-body-parser-1-3-0 body-parser@~1.3.0
+85 silly lockFile fc85f3e9-body-parser-1-3-0 body-parser@~1.3.0
+86 silly lockFile 022ff684-express-4-4-1 express@~4.4.1
+87 silly lockFile 022ff684-express-4-4-1 express@~4.4.1
+88 silly lockFile fdd92f84-method-override-2-0-1 method-override@~2.0.1
+89 silly lockFile fdd92f84-method-override-2-0-1 method-override@~2.0.1
+90 error network connect ETIMEDOUT
+90 error network This is most likely not a problem with npm itself
+90 error network and is related to network connectivity.
+90 error network In most cases you are behind a proxy or have bad network settings.
+90 error network
+90 error network If you are behind a proxy, please make sure that the
+90 error network 'proxy' config is set properly.  See: 'npm help config'
+91 error System Darwin 14.0.0
+92 error command "node" "/usr/local/bin/npm" "install"
+93 error cwd /Users/timotheemevel/Development/workshop/cordova-tutorial-master/server
+94 error node -v v0.10.33
+95 error npm -v 1.4.28
+96 error syscall connect
+97 error code ETIMEDOUT
+98 error errno ETIMEDOUT
+99 verbose exit [ 1, true ]
