@@ -2,11 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link href="assets/ratchet/css/ratchet.css" rel="stylesheet">
     <link href="assets/css/styles.css" rel="stylesheet">
-    <link href="assets/css/pageslider.css" rel="stylesheet">
-    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!--<link href="assets/css/pageslider.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 -->
@@ -15,78 +15,95 @@
 
 <!-- Ecran d'accueil sur lequel l'utilisateur rentre le nom de sa liste et valide -->
 <script id="welcome-tpl" type="text/template">
-<form action="#lists">
-  <input type="text" id="list-name" placeholder="Nom">
-  <button class="btn btn-positive btn-block">Créer ma liste</button>
-</form>
+	<div class="container">
+		<div class="logo-app">
+			<img class="logo-app"  id='' src="assets/img/logo-gps.png" />
+		</div>
+		<form class="welcomeForm" action="#lists">
+			<input type="text" id="list-name" placeholder="Ex: Ma Liste">
+			<button class="btn btn-block btn-outlined">Créer ma liste</button>
+		</form>
+	</div>
 </script>
 
 <!-- Affiche titre + barre recherche pour les catégories -->
 <script id="home-tpl" type="text/template">
-<header class="bar bar-nav">
-<a class="btn btn-link btn-nav pull-left" href="#">
-<span class="icon icon-left-nav"></span>
-</a>
-<h1 class="title">Choisissez vos catégories</h1>
-</header>
-<div class="bar bar-standard bar-header-secondary">
-<input class='search-key' type="search" placeholder="Rechercher"/>
-</div>
-<div class="content"></div>
+	<header class="bar bar-nav">
+		<a class="btn btn-link btn-nav pull-left" href="#">
+		<span class="icon icon-left-nav"></span>
+		</a>
+		<h1 class="title">Choisissez vos catégories</h1>
+	</header>
+	<div class="bar bar-standard bar-header-secondary">
+		<input class='search-key' type="search" placeholder="Rechercher"/>
+	</div>
+	<div class="content">
+	</div>
 </script>
 
-<!-- Affiche toutes les catégories pour le moment mais possibilité de recherche par nom ensuite -->
+<!-- Affiche toutes les catégories mais possibilité de recherche par nom ensuite -->
 <script id="category-list-tpl" type="text/template">
-<form id="insertCat" name="insertCat">
-<ul class="table-view">
-{{#each this}}
-<li class="table-view-cell">
-<a href="#categories/{{ id }}">
-<img class="media-object pull-left" src="{{image}}">
-<div class="media-body">
-{{name}}
+	<form id="insertCat" name="insertCat" method='post' action="#lists/1">
+		<ul class="table-view">
+			{{#each this}}
+			<li class="table-view-cell">
+				<a href="#categories/{{ id }}">
+					<img class="media-object pull-left" src="{{image}}" />
+					<div class="media-body">
+						{{name}}
 <!-- <p>{{title}}</p> -- on pourrait mettre un exemple des produits contenus dans la catégorie -->
-<input class="media-object pull-right" id="category-checkbox" type="checkbox" name="category[{{id}}]" />
-</div>
-</a>
-</li>
-{{/each}}
-</ul>
-<nav class="bar bar-footer">
-<input type="submit" name="submitCat" id="submitCat" value="Valider" class="btn btn-positive btn-block submit-cat-btn" />
-</form>
-<!--<button class="btn btn-positive btn-block">Valider</button> -->
-</nav>
+						<input class="media-object pull-right category" id="category-checkbox" type="checkbox" value="{{id}}" />
+					</div>
+				</a>
+			</li>
+			{{/each}}
+		</ul>
+		<nav class="bar bar-footer">
+			<input type="submit" name="submitCat" id="submitCat" onclick="addCategories()" value="Valider" class="btn btn-positive btn-block submit-cat-btn" />
+		</nav>
+	</form>
 </script>
 
 <!--<script class="traitementFrom">
-	console.log("je suis bien dans le script traitementFrom");
-</script>
--->
+console.log("je suis bien dans le script traitementFrom");
+</script> -->
 
 <!-- Permet d'afficher la catégorie ... pas forcément très utile pour le moment -->
 <script id="category-tpl" type="text/template"> 
-<header class="bar bar-nav">
-<a class="btn btn-link btn-nav pull-left" href="#lists">
-<span class="icon icon-left-nav"></span>
-</a>
-<h1 class="title">{{name}}</h1>
-</header>
-<div class="content">
-<div class="card">
-	<ul class="table-view">
-		<li class="table-view-cell media">
-			<img class="media-object pull-left emp-pic" src="{{image}}">
-		</li>
-		<li class="table-view-cell media">
-			<span class="media-object pull-left icon icon-sms"></span>
-			<div class="media-body">
-					{{ name }}
-			</div>
-		</li>
-	</ul>
-</div>
-</div>
+	<header class="bar bar-nav">
+		<a class="btn btn-link btn-nav pull-left" href="#lists">
+			<span class="icon icon-left-nav"></span>
+		</a>
+		<h1 class="title">{{name}}</h1>
+	</header>
+	<div class="content">
+		<div class="card">
+			<ul class="table-view">
+				<li class="table-view-cell media">
+					<img class="media-object pull-left emp-pic" src="{{image}}">
+				</li>
+				<li class="table-view-cell media">
+					<span class="media-object pull-left icon icon-sms">
+					</span>
+					<div class="media-body">
+						{{ name }}
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</script>
+
+<!-- Ecran d'accueil sur lequel l'utilisateur rentre le nom de sa liste et valide -->
+<script id="list-tpl" type="text/template">
+	<div class="container">
+		<div class="logo-app">
+			<img class="logo-app"  id='' src="assets/img/logo-gps.png" />
+		</div>
+		<div class="text">
+			<h1>Vue de la liste</h1>
+		</div>
+	</div>
 </script>
 
 
@@ -104,6 +121,8 @@
 <script src="js/HomeView.js"></script>
 <script src="js/CategoryListView.js"></script> 
 <script src="js/CategoryView.js"></script>
+<script src="js/formAddCategories.js"></script>
+<script src="js/ListView.js"></script>
 <script src="js/app.js"></script>
 
 </body>

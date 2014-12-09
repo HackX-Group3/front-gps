@@ -6,9 +6,12 @@
     HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
     CategoryListView.prototype.template = Handlebars.compile($("#category-list-tpl").html());
     CategoryView.prototype.template = Handlebars.compile($("#category-tpl").html());
+    ListView.prototype.template = Handlebars.compile($("#list-tpl").html());
+
 
 
     var service = new CategoryService();
+
 //  var slider = new PageSlider($('body'));  to use slider ----
 
     service.initialize().done(function () {
@@ -39,9 +42,9 @@
       });
     */
 
-      /*router.addRoute('lists/1', function(id) {
-        $('body').html(new ListView(list).render().$el);
-      })*/
+      router.addRoute('lists/1', function() {
+        $('body').html(new ListView().render().$el);
+      })
 
       router.start();
     });

@@ -15,8 +15,8 @@ var ListService = function() {
 
     // La fonction est prête mais je n'arrive pas à lui envoyer les bons paramètres avec
     // une catégorie et la liste concernée
-    this.addCategory = function(id, category_params) {
-        return $.post( url + "/" + id + "/" + "add_category_list.json", category_params);
+    this.addCategory = function(list_id, category_id) {
+        return $.post( url + "/" + list_id + "/" + "add_category_list.json", {"category": {"id": "category_id"}});
     }
 
 

@@ -61,3 +61,24 @@ ul {
     background: transparent url(images/ic_action_location.png);
     background-repeat: no-repeat;
 }
+
+.container {
+    height: 1136px;
+    background-color: #dc5353;
+}
+
+.container .logo-app {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
+.container .welcomeForm {
+    padding: 10px 10px 50px;
+
+}
+
+.bar-nav {
+    color: #FFF;
+    background-color: #dc5353;
+}
